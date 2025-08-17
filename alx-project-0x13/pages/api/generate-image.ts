@@ -36,11 +36,12 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     // }
 
 
-    if (!res.ok) {
+  if (!res.ok) {
   const errorText = await res.text();
   console.error("RapidAPI Error Response:", errorText);
   throw new Error(`Failed to fetch from DALLE: ${res.statusText}`);
 }
+
 
 
     const data = await res.json();
